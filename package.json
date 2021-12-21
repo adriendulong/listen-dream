@@ -1,0 +1,25 @@
+{
+  "name": "listen-dream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "listen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriendulong/listen-dream.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriendulong/listen-dream/issues"
+  },
+  "homepage": "https://github.com/adriendulong/listen-dream#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "dotenv": "^10.0.0",
+    "moment": "^2.29.1",
+    "twitter": "^1.7.1"
+  }
+}
