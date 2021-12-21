@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/adriendulong/listen-dream#readme",
   "dependencies": {
+    "@alch/alchemy-web3": "^1.1.9",
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "moment": "^2.29.1",
