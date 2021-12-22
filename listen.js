@@ -19,14 +19,13 @@ async function main() {
         if (!error) {
             const data = getDataDecoded(result.data)
             const osInfos = await getTerraAsset(data.tokenId)
-            console.log(osInfos)
             const username = osInfos.owner.user.username == null ? osInfos.owner.user.address : osInfos.owner.user.username
-            //await tweet(`✨🏰 New dream published:\nAnimated Url: ${osInfos.animation_original_url}\nOwner: ${username}\nBlock Number: ${result.blockNumber}\nOpenSea Asset Link: ${osInfos.permalink}\n#Mathcastles`)
-            //console.log("New tweet sent")
+            await tweet(`✨🏰 New dream published:\nAnimated Url: ${osInfos.animation_original_url}\nOwner: ${username}\nBlock Number: ${result.blockNumber}\nOpenSea Asset Link: ${osInfos.permalink}\n#Mathcastles`)
+            console.log("New tweet sent")
         }
     }
 
-    const subTopics = web3.eth.subscribe("logs", {"fromBlock": 13853769, "address": "0x4E1f41613c9084FdB9E34E11fAE9412427480e56", "topics": ["0x45be0e1ab4f13227fa0c4e2419af72c74f30c385b00c34497e68550f3b40dedb"] }, onNewDream)
+    const subTopics = web3.eth.subscribe("logs", {"address": "0x4E1f41613c9084FdB9E34E11fAE9412427480e56", "topics": ["0x45be0e1ab4f13227fa0c4e2419af72c74f30c385b00c34497e68550f3b40dedb"] }, onNewDream)
 
     subTopics.on("connected", data => {
         console.log(data)
