@@ -1,1 +1,2 @@
-web: node listen.js
+web: node index.js
+worker: node listen.js

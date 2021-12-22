@@ -1,16 +1,3 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
-
-
 async function main() {
     var abi = require("./abi.json")
     const axios = require('axios').default;
@@ -38,7 +25,7 @@ async function main() {
         }
     }
 
-    const subTopics = web3.eth.subscribe("logs", { "address": "0x4E1f41613c9084FdB9E34E11fAE9412427480e56", "topics": ["0x45be0e1ab4f13227fa0c4e2419af72c74f30c385b00c34497e68550f3b40dedb"] }, onNewDream)
+    const subTopics = web3.eth.subscribe("logs", {"address": "0x4E1f41613c9084FdB9E34E11fAE9412427480e56", "topics": ["0x45be0e1ab4f13227fa0c4e2419af72c74f30c385b00c34497e68550f3b40dedb"] }, onNewDream)
 
     subTopics.on("connected", data => {
         console.log(data)
